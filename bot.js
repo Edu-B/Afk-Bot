@@ -131,7 +131,10 @@ function createBot() {
     });
 
     bot.on("chat", (username, message) => {
-      if (message === `${config["bot-account"]["username"]} sleep`) {
+      if (
+        message === `${config["bot-account"]["username"]} sleep` ||
+        message === "bots sleep"
+      ) {
         sleep(bot);
       }
       if (config.utils["chat-log"]) {
